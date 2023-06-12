@@ -16,6 +16,10 @@
             android:windowSoftInputMode="adjustResize"
             android:exported="true"/>
         <activity
+            android:name=".presentation.home.HomeActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"/>
+        <activity
             android:name=".OnBoardingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">

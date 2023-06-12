@@ -6,4 +6,8 @@
     <string name="challenge_hint">ex) 하루에 책 1시간 읽기</string>
     <string name="challenge_count">(0/15)</string>
     <string name="challenge_btn">완료</string>
+    <string name="home_comment">잘하고 있어</string>
+    <string name="home_title">나의 도전 중인 습관</string>
+    <string name="item_home_title">하루에 책 1시간 읽기</string>
+    <string name="item_home_detail">5일 해냈어요</string>
 </resources>

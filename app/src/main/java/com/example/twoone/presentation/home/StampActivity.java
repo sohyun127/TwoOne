@@ -14,6 +14,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.twoone.R;
 import com.example.twoone.data.DbManager;
@@ -23,6 +24,8 @@ public class StampActivity extends Activity {
 
     private ActivityStampBinding binding;
     private DbManager dbManager;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,8 +35,23 @@ public class StampActivity extends Activity {
 
         setData();
         setClickEventOnNavigation();
+        setAdapter();
+
+    }
 
 
+    private void setAdapter(){
+        recyclerView = binding.rvStamp;
+        recyclerView.setHasFixedSize(true);
+
+        adapter = new StampAdapter(getApplicationContext(), new StampAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+
+            }
+        });
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
     }
 
     private void setData() {

@@ -4,7 +4,10 @@ package com.example.twoone.presentation.home;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -13,11 +16,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.twoone.R;
+import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityStampBinding;
 
 public class StampActivity extends Activity {
 
-    ActivityStampBinding binding;
+    private ActivityStampBinding binding;
+    private DbManager dbManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,7 +62,17 @@ public class StampActivity extends Activity {
                         builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                try {
+                                    dbManager = new DbManager(getApplicationContext());
+                                    SQLiteDatabase database = dbManager.getWritableDatabase();
+
+                                    database.execSQL("delete from habit where title='"+getIntent().getStringExtra("title")+"';");
+                                } catch (SQLException e) {
+                                    Log.d("dbError", e.toString());
+                                }
                                 dialog.dismiss();
+                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                finish();
                             }
                         });
 

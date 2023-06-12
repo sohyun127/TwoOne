@@ -26,7 +26,8 @@
         android:gravity="center"
         android:text="@string/on_boarding_title"
         android:textAppearance="@style/TextAppearance.AppCompat.title1"
-        app:layout_constraintTop_toBottomOf="@id/iv_on_boarding_logo" />
+        app:layout_constraintTop_toBottomOf="@id/iv_on_boarding_logo"
+        android:textColor="@color/color_gray_900"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_on_boarding_title"

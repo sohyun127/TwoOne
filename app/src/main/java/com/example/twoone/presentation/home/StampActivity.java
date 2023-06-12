@@ -1,19 +1,21 @@
 package com.example.twoone.presentation.home;
 
+
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.twoone.R;
 import com.example.twoone.databinding.ActivityStampBinding;
 
-public class StampActivity extends AppCompatActivity {
+public class StampActivity extends Activity {
 
     ActivityStampBinding binding;
 
@@ -42,18 +44,36 @@ public class StampActivity extends AppCompatActivity {
                 finish();
             }
         });
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.delete:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("도전을 포기하시겠어요?\n 삭제된 도전은 복구할 수 없어요.");
-                break;
+        binding.tbStampToolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
 
-        }
-        return super.onOptionsItemSelected(item);
+                    case R.id.delete:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(StampActivity.this);
+                        builder.setMessage("도전을 포기하시겠어요?\n삭제된 도전은 복구할 수 없어요.\n\n");
+
+                        builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.show();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
 }

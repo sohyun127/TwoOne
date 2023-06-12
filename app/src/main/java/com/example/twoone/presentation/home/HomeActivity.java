@@ -1,20 +1,24 @@
 package com.example.twoone.presentation.home;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.twoone.R;
 import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityHomeBinding;
+import com.example.twoone.presentation.onboarding.ChallengeActivity;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityHomeBinding binding;
 
@@ -29,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setAdapter();
+        binding.fabHome.setOnClickListener(this);
     }
 
     public void setAdapter() {
@@ -55,5 +60,15 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new HabitAdapter(arrayList,getApplicationContext());
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.fab_home:
+                startActivity(new Intent(this, ChallengeActivity.class));
+                finish();
+        }
+
     }
 }

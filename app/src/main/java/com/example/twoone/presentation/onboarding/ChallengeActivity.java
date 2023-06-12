@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,9 +57,15 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
 
         switch (v.getId()) {
             case R.id.btn_challenge:
-                saveData(binding.etChallengeInput.getText().toString());
-                startActivity(new Intent(this, HomeActivity.class));
-                finish();
+                String habit = binding.etChallengeInput.getText().toString();
+                if (habit.isEmpty()) {
+                    Toast.makeText(this, "입력을 해주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    saveData(habit);
+                    startActivity(new Intent(this, HomeActivity.class));
+                    finish();
+                }
+
         }
 
     }

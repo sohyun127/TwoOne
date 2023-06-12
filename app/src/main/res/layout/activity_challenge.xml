@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="97dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="@color/color_gray_300"
         android:gravity="center"
         android:hint="@string/challenge_hint"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_challenge_input" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_on_boarding_title"
+        android:id="@+id/btn_challenge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"

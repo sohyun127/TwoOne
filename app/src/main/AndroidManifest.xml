@@ -12,6 +12,9 @@
         android:theme="@style/Theme.TwoOne"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.onboarding.ChallengeActivity"
+            android:exported="true"/>
+        <activity
             android:name=".OnBoardingActivity"
             android:exported="true">
             <intent-filter>

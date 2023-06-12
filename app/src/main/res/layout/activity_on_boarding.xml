@@ -30,7 +30,7 @@
         android:textColor="@color/color_gray_900"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_on_boarding_title"
+        android:id="@+id/btn_on_boarding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"

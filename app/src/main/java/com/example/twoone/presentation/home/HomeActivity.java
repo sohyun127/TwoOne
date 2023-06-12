@@ -57,7 +57,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("dbError", e.toString());
         }
 
-        adapter = new HabitAdapter(arrayList,getApplicationContext());
+        adapter = new HabitAdapter(arrayList, getApplicationContext(), new HabitAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(),StampActivity.class);
+                intent.putExtra("title", arrayList.get(position).getTitle());
+                intent.putExtra("day",arrayList.get(position).getDay());
+                startActivity(intent);
+                finish();
+            }
+        });
         adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
     }

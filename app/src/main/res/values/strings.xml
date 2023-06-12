@@ -10,4 +10,6 @@
     <string name="home_title">나의 도전 중인 습관</string>
     <string name="item_home_title">하루에 책 1시간 읽기</string>
     <string name="item_home_detail">5일 해냈어요</string>
+    <string name="stamp_title">하루에 책 1시간 읽기</string>
+    <string name="stamp_day">6일째</string>
 </resources>

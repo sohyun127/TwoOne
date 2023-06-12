@@ -6,6 +6,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,10 +21,17 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     private ArrayList<Habit> arrayList;
     private Context context;
 
-    public HabitAdapter(ArrayList<Habit> arrayList, Context context) {
+    public HabitAdapter(ArrayList<Habit> arrayList, Context context,HabitAdapter.OnItemClickListener listener) {
         this.arrayList = arrayList;
         this.context = context;
+        this.mListener = listener;
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(View v, int position);
+    }
+
+    private HabitAdapter.OnItemClickListener mListener = null;
 
     @NonNull
     @Override
@@ -48,6 +56,17 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         public HabitViewHolder(ItemHomeBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if (pos != RecyclerView.NO_POSITION) {
+                        if (mListener != null) {
+                            mListener.onItemClick(v, pos);
+                        }
+                    }
+                }
+            });
+
         }
 
         void bindItem(Habit item) {

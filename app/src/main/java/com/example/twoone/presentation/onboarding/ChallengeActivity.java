@@ -1,22 +1,26 @@
 package com.example.twoone.presentation.onboarding;
 
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.twoone.R;
+import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityChallengeBinding;
 import com.example.twoone.presentation.home.HomeActivity;
 
 public class ChallengeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityChallengeBinding binding;
+    private DbManager dbManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String input = binding.etChallengeInput.getText().toString();
-                binding.tvChallengeCount.setText("("+input.length()+"/15)");
+                binding.tvChallengeCount.setText("(" + input.length() + "/15)");
             }
 
             @Override
@@ -50,11 +54,26 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_challenge:
+                saveData(binding.etChallengeInput.getText().toString());
                 startActivity(new Intent(this, HomeActivity.class));
                 finish();
         }
 
+    }
+
+
+    public void saveData(String title) {
+        try {
+            dbManager = new DbManager(this);
+            SQLiteDatabase database;
+            database = dbManager.getWritableDatabase();
+
+            database.execSQL("insert into habit values('" + title + "','" + "0" + "');");
+            dbManager.close();
+        } catch (SQLException e) {
+            Log.d("dbError", e.toString());
+        }
     }
 }

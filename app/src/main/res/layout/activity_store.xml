@@ -28,10 +28,20 @@
 
 
     <View
-        android:id="@+id/view_home_line"
+        android:id="@+id/view_store_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/color_gray_400"
         app:layout_constraintTop_toBottomOf="@id/tb_store_tool_Bar" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_store_line"
+        app:spanCount="3"
+        tools:listitem="@layout/item_store" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

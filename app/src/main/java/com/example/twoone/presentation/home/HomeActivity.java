@@ -60,9 +60,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         adapter = new HabitAdapter(arrayList, getApplicationContext(), new HabitAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Intent intent = new Intent(getApplicationContext(),StampActivity.class);
+                Intent intent = new Intent(getApplicationContext(), StampActivity.class);
                 intent.putExtra("title", arrayList.get(position).getTitle());
-                intent.putExtra("day",arrayList.get(position).getDay());
+                intent.putExtra("day", arrayList.get(position).getDay());
                 startActivity(intent);
                 finish();
             }
@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.fab_home:
                 startActivity(new Intent(this, ChallengeActivity.class));
                 finish();

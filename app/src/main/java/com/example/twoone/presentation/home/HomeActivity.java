@@ -17,6 +17,7 @@ import com.example.twoone.R;
 import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityHomeBinding;
 import com.example.twoone.presentation.onboarding.ChallengeActivity;
+import com.example.twoone.presentation.store.StoreActivity;
 
 import java.util.ArrayList;
 
@@ -41,11 +42,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //이모티콘을 바꿔주는 함수
     private void setCharacter() {
-        int img = getIntent().getIntExtra("img",R.drawable.img_penguin1);
+        int img = getIntent().getIntExtra("img", R.drawable.img_penguin1);
         binding.ivHomeCharacter.setImageResource(img);
     }
 
+    //리사이클러뷰 어댑터 설정 함수
     public void setAdapter() {
         arrayList = new ArrayList<>();
 
@@ -91,6 +94,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
+    //네비게이션 바 클릭 이벤트 함수
 
     public void setClickEventOnToolBar() {
         binding.tbHomeToolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {

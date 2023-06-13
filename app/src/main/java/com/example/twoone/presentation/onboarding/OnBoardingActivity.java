@@ -1,4 +1,4 @@
-package com.example.twoone;
+package com.example.twoone.presentation.onboarding;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,10 +9,10 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.twoone.R;
 import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityOnBoardingBinding;
 import com.example.twoone.presentation.home.HomeActivity;
-import com.example.twoone.presentation.onboarding.ChallengeActivity;
 
 public class OnBoardingActivity extends AppCompatActivity implements View.OnClickListener {
 

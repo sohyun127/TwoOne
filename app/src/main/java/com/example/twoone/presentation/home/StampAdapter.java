@@ -43,7 +43,7 @@ public class StampAdapter extends RecyclerView.Adapter<StampAdapter.StampViewHol
     @Override
     public void onBindViewHolder(@NonNull StampAdapter.StampViewHolder holder, int position) {
 
-            holder.bindItem(arrayList.get(position), position);
+        holder.bindItem(arrayList.get(position), position);
 
     }
 

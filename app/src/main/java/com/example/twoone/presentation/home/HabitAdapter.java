@@ -21,7 +21,7 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     private ArrayList<Habit> arrayList;
     private Context context;
 
-    public HabitAdapter(ArrayList<Habit> arrayList, Context context,HabitAdapter.OnItemClickListener listener) {
+    public HabitAdapter(ArrayList<Habit> arrayList, Context context, HabitAdapter.OnItemClickListener listener) {
         this.arrayList = arrayList;
         this.context = context;
         this.mListener = listener;

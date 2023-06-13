@@ -1,4 +1,4 @@
-package com.example.twoone.presentation.home;
+package com.example.twoone.presentation.store;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.twoone.R;
 import com.example.twoone.data.DbManager;
 import com.example.twoone.databinding.ActivityStoreBinding;
+import com.example.twoone.presentation.home.HomeActivity;
 import com.example.twoone.presentation.store.Store;
 import com.example.twoone.presentation.store.StoreAdapter;
 
@@ -36,6 +37,7 @@ public class StoreActivity extends AppCompatActivity {
     }
 
 
+    //리사이클러뷰 어댑터 설정하는 함수
     private void setAdapter() {
 
         arrayList = new ArrayList<Store>();
@@ -72,6 +74,7 @@ public class StoreActivity extends AppCompatActivity {
 
     }
 
+    //데이터 설정하는 함수
     private void setData() {
         arrayList.add(new Store("기본 ver", R.drawable.img_penguin1_after));
         arrayList.add(new Store("물고기 ver", R.drawable.img_penguin2_after));
@@ -82,6 +85,7 @@ public class StoreActivity extends AppCompatActivity {
 
     }
 
+    //네비게이션 클릭 이벤트 함수
     private void setClickEventOnNavigation() {
         binding.tbStoreToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -48,7 +48,7 @@ public class StampActivity extends Activity {
 
     }
 
-
+    //리사이클러뷰 어댑터 설정 함수
     private void setAdapter() {
 
         arrayList = new ArrayList<>();
@@ -96,11 +96,13 @@ public class StampActivity extends Activity {
         recyclerView.setAdapter(adapter);
     }
 
+    //화면에 리스트 변경사항 반영해주는 함수
     private void setData() {
         binding.tvStampTitle.setText(title);
         binding.tvStampDay.setText(day + "일째");
     }
 
+    //네비게이션 클릭 이벤트 함수
     private void setClickEventOnNavigation() {
         binding.tbStampToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

@@ -14,8 +14,8 @@ public class DbManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table routine(title text,day text,stamp text)");
-        db.execSQL("create table user(coin text,stamp int,character int)");
+        db.execSQL("create table routine(title text,day text,stamp text)"); //계획 테이블
+        db.execSQL("create table user(coin text,stamp int,character int)"); //사용자 정보 테이블
 
         db.execSQL("insert into user values('" + "20" + "','" + R.drawable.img_star_sticker + "','" + R.drawable.img_penguin2 + "');");
     }

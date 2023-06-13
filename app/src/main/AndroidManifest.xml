@@ -16,7 +16,7 @@
             android:windowSoftInputMode="adjustResize"
             android:exported="true"/>
         <activity
-            android:name=".presentation.home.StoreActivity"
+            android:name=".presentation.store.StoreActivity"
             android:windowSoftInputMode="adjustResize"
             android:exported="true"/>
         <activity
@@ -28,7 +28,7 @@
             android:windowSoftInputMode="adjustResize"
             android:exported="true"/>
         <activity
-            android:name=".OnBoardingActivity"
+            android:name=".presentation.onboarding.OnBoardingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

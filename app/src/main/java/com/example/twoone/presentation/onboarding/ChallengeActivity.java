@@ -30,8 +30,13 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
         setContentView(binding.getRoot());
 
         binding.btnChallenge.setOnClickListener(this);
+        countText();
 
-        //edit text 글자수 세는 리스너
+    }
+
+    //edit text 글자수 세는 함수
+    public void countText() {
+
         binding.etChallengeInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -49,7 +54,6 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
 
             }
         });
-
     }
 
     @Override
@@ -70,14 +74,14 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
 
     }
 
-
+    //설정한 계획 데이터베이스에 저장 해주는 함수
     public void saveData(String title) {
         try {
             dbManager = new DbManager(this);
             SQLiteDatabase database;
             database = dbManager.getWritableDatabase();
 
-            database.execSQL("insert into routine values('" + title + "','" + "0" + "','"+"0"+"');");
+            database.execSQL("insert into routine values('" + title + "','" + "0" + "','" + "0" + "');");
             dbManager.close();
         } catch (SQLException e) {
             Log.d("dbError", e.toString());

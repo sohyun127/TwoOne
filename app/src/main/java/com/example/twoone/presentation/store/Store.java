@@ -4,8 +4,8 @@ import android.graphics.drawable.Drawable;
 
 public class Store {
 
-    private String title;
-    private int img;
+    private String title; //상점 타이틀
+    private int img;//상점 이미지
 
     public Store(String title, int img) {
         this.title = title;

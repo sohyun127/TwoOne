@@ -37,7 +37,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setAdapter();
         binding.fabHome.setOnClickListener(this);
         setClickEventOnToolBar();
+        setCharacter();
 
+    }
+
+    private void setCharacter() {
+        int img = getIntent().getIntExtra("img",R.drawable.img_penguin1);
+        binding.ivHomeCharacter.setImageResource(img);
     }
 
     public void setAdapter() {

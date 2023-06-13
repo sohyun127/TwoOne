@@ -5,10 +5,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.twoone.R;
@@ -34,6 +36,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         setAdapter();
         binding.fabHome.setOnClickListener(this);
+        setClickEventOnToolBar();
+
     }
 
     public void setAdapter() {
@@ -77,7 +81,24 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fab_home:
                 startActivity(new Intent(this, ChallengeActivity.class));
                 finish();
+
         }
 
+    }
+
+    public void setClickEventOnToolBar() {
+        binding.tbHomeToolBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+
+                    case R.id.store:
+                        startActivity(new Intent(getApplicationContext(), StoreActivity.class));
+                        finish();
+
+                }
+                return false;
+            }
+        });
     }
 }

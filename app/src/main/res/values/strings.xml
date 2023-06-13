@@ -12,5 +12,5 @@
     <string name="item_home_detail">5일 해냈어요</string>
     <string name="stamp_title">하루에 책 1시간 읽기</string>
     <string name="stamp_day">6일째</string>
-    <string name="stamp_etc">*하루 한 번만 스티커를 붙일 수 있어요.\n*스티커를 붙이면 1코인을 얻을 수 있어요.</string>
+    <string name="stamp_etc">*하루 한 번만 스티커를 붙여요.\n*스티커를 붙이면 1코인을 얻을 수 있어요.</string>
 </resources>

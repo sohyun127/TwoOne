@@ -77,7 +77,7 @@ public class ChallengeActivity extends AppCompatActivity implements View.OnClick
             SQLiteDatabase database;
             database = dbManager.getWritableDatabase();
 
-            database.execSQL("insert into habit values('" + title + "','" + "0" + "');");
+            database.execSQL("insert into routine values('" + title + "','" + "0" + "','"+"0"+"');");
             dbManager.close();
         } catch (SQLException e) {
             Log.d("dbError", e.toString());

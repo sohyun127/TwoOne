@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             DbManager dbManager = new DbManager(this);
             SQLiteDatabase database = dbManager.getReadableDatabase();
 
-            Cursor cursor = database.rawQuery("select title,day from habit", null);
+            Cursor cursor = database.rawQuery("select title,day,stamp from routine", null);
 
             while (cursor.moveToNext()) {
                 Habit habit = new Habit(cursor.getString(0), cursor.getString(1));

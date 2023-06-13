@@ -12,7 +12,7 @@ public class DbManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table habit(title text,day text)");
+        db.execSQL("create table routine(title text,day text,stamp text)");
     }
 
     @Override

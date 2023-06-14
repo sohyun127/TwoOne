@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_stamp_tool_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_stamp_toolbar"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <View
+        android:id="@+id/view_home_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_gray_400"
+        app:layout_constraintTop_toBottomOf="@id/tb_stamp_tool_Bar" />
+
+
+    <TextView
+        android:id="@+id/tv_stamp_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/stamp_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.title1"
+        android:textColor="@color/color_main1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_home_line" />
+
+
+    <TextView
+        android:id="@+id/tv_stamp_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/stamp_day"
+        android:textAppearance="@style/TextAppearance.AppCompat.sub_title"
+        android:textColor="@color/color_gray_500"
+        app:layout_constraintEnd_toEndOf="@id/tv_stamp_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_stamp_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_stamp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tv_etc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_stamp_day"
+        app:spanCount="5"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:itemCount="21"
+        tools:listitem="@layout/item_stamp" />
+
+    <TextView
+        android:id="@+id/tv_etc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="@string/stamp_etc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_stamp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

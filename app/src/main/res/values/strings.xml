@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TwoOne</string>
+    <string name="on_boarding_title">투원과 함께 21일 습관 만들기에 도전해보세요!</string>
+    <string name="on_boarding_btn">습관 만들기</string>
+    <string name="challenge_title">나의 목표를 입력해 볼까요?</string>
+    <string name="challenge_hint">ex) 하루에 책 1시간 읽기</string>
+    <string name="challenge_count">(0/15)</string>
+    <string name="challenge_btn">완료</string>
+    <string name="home_comment">잘하고 있어</string>
+    <string name="home_title">나의 도전 중인 습관</string>
+    <string name="item_home_title">하루에 책 1시간 읽기</string>
+    <string name="item_home_detail">5일 해냈어요</string>
+    <string name="stamp_title">하루에 책 1시간 읽기</string>
+    <string name="stamp_day">6일째</string>
+    <string name="stamp_etc">*하루 한 번만 스티커를 붙여요.</string>
 </resources>
